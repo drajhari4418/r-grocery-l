@@ -2,11 +2,15 @@ import React, { useState, useEffect } from 'react'
 import List from './List'
 import Alert from './Alert'
 
+
+
 const getLocalStorage = () => {
   let list = localStorage.getItem('list')
   if (list) {
     return (list = JSON.parse(localStorage.getItem('list')))
-  } else {
+  }
+   else 
+    {
     return []
   }
 }
@@ -74,7 +78,10 @@ function App() {
       <form className="grocery-form" onSubmit={handleSubmit}>
         {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
 
-        <h3>grocery bud</h3>
+        <div className="app-header">
+  <h3>Grocery Manager</h3>
+  <span className="item-count">{list.length} items</span>
+</div>
         <div className="form-control">
           <input
             type="text"
