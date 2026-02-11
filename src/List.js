@@ -25,20 +25,13 @@ const ListItem = ({ id, title, removeItem, editItem }) => {
         <p className="title">{title}</p>
 
         <div className="btn-container">
-          <button
-            type="button"
-            className="edit-btn"
-            onClick={() => editItem(id)}
-          >
-            <FaEdit />
-          </button>
-          <button
-            type="button"
-            className="delete-btn"
-            onClick={() => removeItem(id)}
-          >
-            <FaTrash />
-          </button>
+          <button className="edit-btn" onClick={() => editItem(id)}>
+  <FaEdit />
+</button>
+<button className="delete-btn" onClick={() => removeItem(id)}>
+  <FaTrash />
+</button>
+
         </div>
       </article>
       {titleImage && <img w="8rem" h="4rem" alt={title} src={titleImage} />}
